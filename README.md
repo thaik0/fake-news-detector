@@ -15,6 +15,8 @@ I want to understand the basic supervised machine learning pipeline for text ide
 - inspects dataset shape, columns, and sample rows through head()
 - splits data into training and testing sets
 - converts article into TF-IDF features
+- trains the classifier
+- reports test accuracy
 
 ## Tech stack
 - Python
