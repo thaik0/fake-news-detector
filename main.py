@@ -37,9 +37,11 @@ tfidf_test = tfidf_vectorizer.transform(x_test)
 
 # initialize a PassiveAggressiveClassifier
 pac = PassiveAggressiveClassifier(max_iter=50)
+# train the model on training features and training labels
 pac.fit(tfidf_train,y_train)
 
-#predict on test set and calculate accuracy
+# ask the model to predict on unseen test set
 y_pred = pac.predict(tfidf_test)
+# measure how accurate our model is at correctly predicting
 score = accuracy_score(y_test,y_pred)
 print(f'Accuracy: {round(score*100,2)}%')
