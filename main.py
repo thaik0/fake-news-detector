@@ -45,3 +45,8 @@ y_pred = pac.predict(tfidf_test)
 # measure how accurate our model is at correctly predicting
 score = accuracy_score(y_test,y_pred)
 print(f'Accuracy: {round(score*100,2)}%')
+
+# build a confusion matrix to better understand where our model is incorrect
+cm = confusion_matrix(y_test, y_pred, labels=['FAKE', 'REAL'])
+print("\n confusion matrix:")
+print(cm)
