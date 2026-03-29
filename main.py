@@ -26,3 +26,11 @@ x_train, x_test, y_train, y_test = train_test_split(df['text'], labels, test_siz
 
 print("\ntrain and test sizes:")
 print(len(x_train), len(x_test), len(y_train), len(y_test))
+
+# initalize our TfidfVectorizer, ignore common english words and words that appear in more than 70% of articles
+tfidf_vectorizer = TfidfVectorizer(stop_words='english', max_df=0.7)
+
+# learn vocab from the training set and convert it to numeric features
+tfidf_train = tfidf_vectorizer.fit_transform(x_train)
+# just convert text from test set to numeric features
+tfidf_test = tfidf_vectorizer.transform(x_test)
